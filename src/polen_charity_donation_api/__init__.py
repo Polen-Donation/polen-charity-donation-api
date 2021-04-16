@@ -187,3 +187,79 @@ class PolenCharityDonationAPI:
         """
         params['api_token'] = self.api_token
         return requests.get(f'{self.base_url}/platform/list', params=params)
+
+    # Store
+
+    def get_store_detail(self, params: dict):
+        """Método que retorna detalhes de uma loja
+
+            Parameter
+            _________
+              params: dict
+                Dicionário com as configurações adicionais
+        """
+        params['api_token'] = self.api_token
+        return requests.get(f'{self.base_url}/store/detail', params=params)
+
+    def get_store_list(self, params={}):
+        """Método que retorna uma lista de lojas cadastradas em uma conta
+
+            Parameter
+            _________
+              params: dict
+                Dicionário com as configurações adicionais
+        """
+        params['api_token'] = self.api_token
+        return requests.get(f'{self.base_url}/store/list', params=params)
+
+    def update_store(self, body: dict, params: dict):
+        """Método que atualiza uma loja
+
+            Parameter
+            ---------
+              params: dict
+                Dicionário com as configurações adicionais
+              body: dict
+                Dicionário com o corpo da requisição
+        """
+        params['api_token'] = self.api_token
+        return requests.put(f'{self.base_url}/store/update', params=params, data=json.dump(body))
+
+    def add_cause_store(self, body: dict, params: dict):
+        """Método que adiciona uma causa a loja
+
+            Parameter
+            ---------
+              params: dict
+                Dicionário com as configurações adicionais
+              body: dict
+                Dicionário com o corpo da requisição
+        """
+        params['api_token'] = self.api_token
+        return requests.post(f'{self.base_url}/store/cause/add', params=params, json=body)
+
+    def create_store(self, body: dict, params: dict):
+        """Método que cria uma nova loja
+
+            Parameter
+            ---------
+              params: dict
+                Dicionário com as configurações adicionais
+              body: dict
+                Dicionário com o corpo da requisição
+        """
+        params['api_token'] = self.api_token
+        return requests.post(f'{self.base_url}/store/create', params=params, json=body)
+
+    def remove_cause_store(self, body: dict, params: dict):
+        """Método que remove uma causa de uma loja
+
+            Parameter
+            ---------
+              params: dict
+                Dicionário com as configurações adicionais
+              body: dict
+                Dicionário com o corpo da requisição
+        """
+        params['api_token'] = self.api_token
+        return requests.post(f'{self.base_url}/store/cause/remove', params=params, json=body)
