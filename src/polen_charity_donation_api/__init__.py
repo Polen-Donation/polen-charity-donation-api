@@ -263,3 +263,49 @@ class PolenCharityDonationAPI:
         """
         params['api_token'] = self.api_token
         return requests.post(f'{self.base_url}/store/cause/remove', params=params, json=body)
+
+    # Transparency
+
+    def get_transparency_impact_consolidated(self, params: dict):
+        """Método que retorna consolidado doado por uma empresa
+
+            Parameter
+            _________
+              params: dict
+                Dicionário com as configurações adicionais
+        """
+        params['api_token'] = self.api_token
+        return requests.get(f'{self.base_url}/transparency/impact/consolidated', params=params)
+
+    def get_transparency_content_detail(self, params: dict):
+        """Método que retorna detalhes do conteúdo de impacto
+
+            Parameter
+            _________
+              params: dict
+                Dicionário com as configurações adicionais
+        """
+        params['api_token'] = self.api_token
+        return requests.get(f'{self.base_url}/transparency/content/detail', params=params)
+
+    def get_transparency_receipts(self, params: dict):
+        """Método que retorna detalhes do conteúdo de impacto
+
+            Parameter
+            _________
+              params: dict
+                Dicionário com as configurações adicionais
+        """
+        params['api_token'] = self.api_token
+        return requests.get(f'{self.base_url}/transparency/receipts', params=params)
+
+    def get_transparency_content_list(self, params: dict):
+        """Método que retorna lista de conteúdos de impacto
+
+            Parameter
+            _________
+              params: dict
+                Dicionário com as configurações adicionais
+        """
+        params['api_token'] = self.api_token
+        return requests.get(f'{self.base_url}/transparency/content/list', params=params)
