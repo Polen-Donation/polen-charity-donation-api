@@ -114,3 +114,63 @@ class PolenCharityDonationAPI:
         params['api_token'] = self.api_token
         return requests.post(f'{self.base_url}/donation/direct', params=params, json=body)
 
+    # Donation Notify
+
+    def get_donation_notify_detail(self, params: dict):
+        """Método que retorna de detalhes de uma doação especifica
+            Parameter
+            ---------
+              params: dict
+                Dicionário com as configurações adicionais
+        """
+        params['api_token'] = self.api_token
+        return requests.get(f'{self.base_url}/donation/notify/detail', params=params)
+
+    def get_donation_notify_list(self, params: dict):
+        """Método que retorna uma lista de doações da loja
+            Parameter
+            ---------
+              params: dict
+                Dicionário com as configurações adicionais
+        """
+        params['api_token'] = self.api_token
+        return requests.get(f'{self.base_url}/donation/notify/list', params=params)
+
+    def update_donation_notify(self, body: dict, params={}):
+        """Método que atualiza o status da doação
+
+            Parameter
+            ---------
+              params: dict
+                Dicionário com as configurações adicionais
+              body: dict
+                Dicionário com o corpo da requisição
+        """
+        params['api_token'] = self.api_token
+        return requests.put(f'{self.base_url}/donation/notify/update', params=params, data=json.dump(body))
+
+    def create_donation_notify(self, body: dict, params: dict):
+        """Método que cria uma nova doação
+
+            Parameter
+            ---------
+              params: dict
+                Dicionário com as configurações adicionais
+              body: dict
+                Dicionário com o corpo da requisição
+        """
+        params['api_token'] = self.api_token
+        return requests.post(f'{self.base_url}/donation/notify/create', params=params, json=body)
+
+    # Finance
+
+    def get_finance_billing_list(self, params: dict):
+        """Método que retorna uma lista de faturas de doações
+
+            Parameter
+            _________
+              params: dict
+                Dicionário com as configurações adicionais
+        """
+        params['api_token'] = self.api_token
+        return requests.get(f'{self.base_url}/finance/billing/list', params=params)
