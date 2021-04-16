@@ -98,3 +98,19 @@ class PolenCharityDonationAPI:
         """
         params['api_token'] = self.api_token
         return requests.post(f'{self.base_url}/company/update', params=params, json=body)
+
+    # Donation Direct
+
+    def create_donation_direct(self, body: dict, params={}):
+        """Método que cria uma doação direta
+
+            Parameter
+            ---------
+              params: dict
+                Dicionário com as configurações adicionais
+              body: dict
+                Dicionário com o corpo da requisição
+        """
+        params['api_token'] = self.api_token
+        return requests.post(f'{self.base_url}/donation/direct', params=params, json=body)
+
