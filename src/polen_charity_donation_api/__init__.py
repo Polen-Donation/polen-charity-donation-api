@@ -309,3 +309,92 @@ class PolenCharityDonationAPI:
         """
         params['api_token'] = self.api_token
         return requests.get(f'{self.base_url}/transparency/content/list', params=params)
+
+    # User
+
+    def get_user_detail(self, params: dict):
+        """Método que retorna detalhes de um usuário
+
+            Parameter
+            _________
+              params: dict
+                Dicionário com as configurações adicionais
+        """
+        params['api_token'] = self.api_token
+        return requests.get(f'{self.base_url}/user/detail', params=params)
+
+    def get_user_impact(self, params: dict):
+        """Método que retorna detalhes do impacto social causado pelo usuário
+
+            Parameter
+            _________
+              params: dict
+                Dicionário com as configurações adicionais
+        """
+        params['api_token'] = self.api_token
+        return requests.get(f'{self.base_url}/user/impact', params=params)
+
+    def get_user_list(self, params: dict):
+        """Método que retorna uma lista de usuários cadastrados na loja
+
+            Parameter
+            _________
+              params: dict
+                Dicionário com as configurações adicionais
+        """
+        params['api_token'] = self.api_token
+        return requests.get(f'{self.base_url}/user/list', params=params)
+
+    def update_user(self, body: dict, params: dict):
+        """Método que atualiza as informações de um usuário
+
+            Parameter
+            ---------
+              params: dict
+                Dicionário com as configurações adicionais
+              body: dict
+                Dicionário com o corpo da requisição
+        """
+        params['api_token'] = self.api_token
+        return requests.put(f'{self.base_url}/user/update', params=params, data=json.dump(body))
+
+    def add_user(self, body: dict, params: dict):
+        """Método que cria um novo usuário ligado a loja
+
+            Parameter
+            ---------
+              params: dict
+                Dicionário com as configurações adicionais
+              body: dict
+                Dicionário com o corpo da requisição
+        """
+        params['api_token'] = self.api_token
+        return requests.post(f'{self.base_url}/user/create', params=params, json=body)
+
+    def update_user_cause(self, body: dict, params: dict):
+        """Método que adiciona ou remove causas ligadas a um usuário
+
+            Parameter
+            ---------
+              params: dict
+                Dicionário com as configurações adicionais
+              body: dict
+                Dicionário com o corpo da requisição
+        """
+        params['api_token'] = self.api_token
+        return requests.post(f'{self.base_url}/user/causes', params=params, json=body)
+
+    #Transaction
+
+    def update_transaction_status(self, params: dict, body={}):
+        """Método que ajuda o sistema entender o status da compra
+
+                    Parameter
+                    ---------
+                      params: dict
+                        Dicionário com as configurações adicionais
+                      body: dict
+                        Dicionário com o corpo da requisição
+                """
+        params['api_token'] = self.api_token
+        return requests.post(f'{self.base_url}/user/causes', params=params, json=body)
