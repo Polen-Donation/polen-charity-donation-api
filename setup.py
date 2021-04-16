@@ -9,7 +9,8 @@ setuptools.setup(
     author="polen",
     author_email="eupolinizo@opolen.com.br",
     description="A sua API de doações",
-    long_description=open('README.md').read(),
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     url="https://polen-donation.github.io/polen-docs/",
     project_urls={
         "Bug Tracker": "https://github.com/Polen-Donation/polen-charity-donation-api/issues",
