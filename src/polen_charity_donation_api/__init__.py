@@ -174,3 +174,16 @@ class PolenCharityDonationAPI:
         """
         params['api_token'] = self.api_token
         return requests.get(f'{self.base_url}/finance/billing/list', params=params)
+
+    # Platform
+
+    def get_platform_list(self, params={}):
+        """Método que retorna uma lista de plataformas associadas
+
+            Parameter
+            _________
+              params: dict
+                Dicionário com as configurações adicionais
+        """
+        params['api_token'] = self.api_token
+        return requests.get(f'{self.base_url}/platform/list', params=params)
