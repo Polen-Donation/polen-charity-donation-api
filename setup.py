@@ -4,8 +4,8 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="polen_charity_donation_api",
-    version="1.0.0",
+    name="polen_donation_api",
+    version="0.0.2",
     author="polen",
     author_email="eupolinizo@opolen.com.br",
     description="A sua API de doações",

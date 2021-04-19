@@ -1,4 +1,4 @@
-<h1 align="center">PolenCharityDonationAPI</h1>
+<h1 align="center">PolenDonationAPI</h1>
 
 
 [![nosso site](https://img.shields.io/badge/nosso%20site-polen-%23413279)](https://polen.com.br/)
@@ -23,7 +23,7 @@ A Polen é uma empresa especializada em intermediar doações corporativas entre
 A maneira mais fácil de instalar a PolenAPI é usar a ferramenta de linha de comando. Você pode executar este comando em qualquer lugar em um novo repositório ou dentro de um repositório existente.
 Você pode encontrar essa e várias outras bibliotecas em nossos [repositórios](https://github.com/Polen-Donation/PolenCharityDonationAPI).
 ```shell
-pip install polen_charity_donation_api
+pip install polen_donation_api
 ```
 
 ## Como usar
@@ -31,9 +31,9 @@ Após a instalação você pode fazer a importação para o seu projeto através
 
 
 ```python
-from polen_charity_donation_api import PolenCharityDonationAPI
+from polen_donation_api import PolenDonationAPI
 
-polen = PolenCharityDonationAPI("token")
+polen = PolenDonationAPI("token")
 ```
 
 ## Como conseguir o seu Token
@@ -45,7 +45,7 @@ Você pode consultar nossa [documentação](https://polen-donation.github.io/pol
 
 - [Causes](https://polen-donation.github.io/polen-docs/docs/python/methods/cause): Métodos que permitem consultas de causas;
 - [Company](https://polen-donation.github.io/polen-docs/docs/python/methods/company): Métodos que listam empresas, criam empresas, atualizam dados da empresa e listam lojas associadas a uma empresa;
-- [Donation Direct](https://polen-donation.github.io/polen-docs/python/node/methods/donation-direct): Método que cria uma doação direta;
+- [Donation Direct](https://polen-donation.github.io/polen-docs/docs/python/methods/donation-direct): Método que cria uma doação direta;
 - [Finance](https://polen-donation.github.io/polen-docs/docs/python/methods/finance): Método que retorna todas as suas faturas de pagamento;
 - [Donation Notify](https://polen-donation.github.io/polen-docs/docs/python/methods/notify-donation): Métodos que listam doações feitas, retornam detalhes de uma doação, atualizam status de uma doação e criam uma nova doação associada a uma loja;
 - [Platform](https://polen-donation.github.io/polen-docs/docs/python/methods/platform):  Método que retorna todas as plataformas parceiras que o Polen já possui integração nativa;
